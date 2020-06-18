@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function startTime()
+{
+var today = new Date();
+var date = new Date("8/7/2019");
+var demo = ((today - date)/1000).toFixed(0);
+var day = parseInt(demo / 86400);
+var hour = parseInt((demo-day*3600*24)/3600);
+var	min = parseInt((demo-day*3600*24-hour*3600)/60);
+var sec = parseInt(demo-day*3600*24-hour*3600-min*60);
+document.getElementById("d").innerHTML = day.toString();
+document.getElementById("h").innerHTML = hour.toString();
+document.getElementById("m").innerHTML = min.toString();
+document.getElementById("s").innerHTML = sec.toString();
+var t = setTimeout(function() {
+    startTime();
+}, 500);
+}
+</script>
+</head>
+
+<body onload="startTime()">
+
+<h2>My First Web Page</h2>
+<p>My First Paragraph.</p>
+
+<p id="d"></p>
+<p id="h"></p>
+<p id="m"></p>
+<p id="s"></p>
+
+</body>
+
+
+</html> 
